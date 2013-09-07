@@ -16,7 +16,7 @@
  1040 A2 = XR * XR:B2 = YR * YR:F2 = 4 * A2
  1050 X = 0:Y = YR:SI = 2 * B2 + A2 * (1 - 2 * YR)
  1060 IF B2 * X > A2 * Y THEN GOTO 1110
- 1070 SP = X / Y:AN = ATN (SP):DG = 90 - AN * 180 / PI: GOSUB 1180
+ 1070 SP = X / Y:AN = ATN (SP):DG = 90 - AN * 180 / PI: GOSUB 1190
  1080 IF SI >= 0 THEN SI = SI + F2 * (1 - Y):Y = Y - 1
  1090 SI = SI + B2 * (4 * X + 6)
  1100 X = X + 1: GOTO 1060
