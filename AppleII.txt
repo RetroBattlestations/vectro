@@ -5,7 +5,7 @@
  140 SC = SC / 1000:XO = SW / 2
  150 REM === Read the vector graphics from DATA and draw the picture
  160 READ P$
- 170 IF P$ = "EOI" THEN END 
+ 170 IF P$ = "EOI" THEN END
  180 IF P$ = "C" OR P$ = "E" THEN GOSUB 1010
  190 IF P$ = "L" THEN GOSUB 1510
  200 GOTO 130
@@ -22,7 +22,7 @@
  1100 X = X + 1: GOTO 1060
  1110 F2 = 4 * B2
  1120 X = XR:Y = 0:SI = 2 * A2 + B2 * (1 - 2 * XR)
- 1130 IF A2 * Y > B2 * X THEN RETURN 
+ 1130 IF A2 * Y > B2 * X THEN RETURN
  1140 SP = Y / X:AN = ATN (SP):DG = AN * 180 / PI: GOSUB 1190
  1150 IF SI >= 0 THEN SI = SI + F2 * (1 - X):X = X - 1
  1160 SI = SI + A2 * (4 * Y + 6)
@@ -33,12 +33,12 @@
  1210 IF 180 - DG >= AS AND 180 - DG <= AE THEN HPLOT XC - X + XO,YC - Y
  1220 IF DG >= NS - 180 AND DG <= NE - 180 THEN HPLOT XC - X + XO,YC + Y
  1230 IF 180 - DG >= NS - 180 AND 180 - DG <= NE - 180 THEN HPLOT XC + X + XO,YC + Y
- 1240 RETURN 
+ 1240 RETURN
  1500 REM === Draw a line
  1510 READ X1,Y1,X2,Y2
  1520 X1 = X1 * SC:Y1 = Y1 * SC:X2 = X2 * SC:Y2 = Y2 * SC
  1530 HPLOT X1 + XO,Y1 TO X2 + XO,Y2
- 1540 RETURN 
+ 1540 RETURN
  5000 REM === This is the image data
  5010 DATA L,-350,24,-45,0
  5020 DATA L,-450,24,-89,38
