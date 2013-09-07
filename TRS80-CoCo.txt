@@ -1,11 +1,11 @@
  100 REM === Setup graphics and initialize some constants
  110 CLS:PMODE 3,1:PCLS 0:SCREEN 1,1:COLOR 1,3
  120 PI = 3.14159265359
- 130 SW = 256:SH = 192:SC = SW: IF SH < SC THEN SC = SH
- 140 SC = SC / 1000:XO = SW / 2
+ 130 SW = 256:SH = 192:SC = SW / 1750:XF = SW / 2
+ 140 IF SH / 1000 < SC THEN SC = SH / 1000
  150 REM === Read the vector graphics from DATA and draw the picture
  160 READ P$
- 170 IF P$ = "EOI" THEN END
+ 170 IF P$ = "EOI" THEN GOTO 170
  180 IF P$ = "C" OR P$ = "E" THEN GOSUB 1010
  190 IF P$ = "L" THEN GOSUB 1510
  200 GOTO 130
@@ -29,15 +29,15 @@
  1170 Y = Y + 1: GOTO 1130
  1180 REM === Plot point on arc
  1190 NS = AS:NE = AE: IF AS < 0 THEN NS = AS + 360:NE = AE + 360
- 1200 IF DG >= AS AND DG <= AE THEN PSET(XC + X + XO,YC - Y)
- 1210 IF 180 - DG >= AS AND 180 - DG <= AE THEN PSET(XC - X + XO,YC - Y)
- 1220 IF DG >= NS - 180 AND DG <= NE - 180 THEN PSET(XC - X + XO,YC + Y)
- 1230 IF 180 - DG >= NS - 180 AND 180 - DG <= NE - 180 THEN PSET(XC + X + XO,YC + Y)
+ 1200 IF DG >= AS AND DG <= AE THEN PSET(XC + X + XF,YC - Y)
+ 1210 IF 180 - DG >= AS AND 180 - DG <= AE THEN PSET(XC - X + XF,YC - Y)
+ 1220 IF DG >= NS - 180 AND DG <= NE - 180 THEN PSET(XC - X + XF,YC + Y)
+ 1230 IF 180 - DG >= NS - 180 AND 180 - DG <= NE - 180 THEN PSET(XC + X + XF,YC + Y)
  1240 RETURN
  1500 REM === Draw a line
  1510 READ X1,Y1,X2,Y2
  1520 X1 = INT(X1 * SC):Y1 = INT(Y1 * SC):X2 = INT(X2 * SC):Y2 = INT(Y2 * SC)
- 1530 LINE (X1 + XO,Y1)-(X2 + XO,Y2),PSET
+ 1530 LINE (X1 + XF,Y1)-(X2 + XF,Y2),PSET
  1540 RETURN
  5000 REM === This is the image data
  5010 DATA L,-350,24,-45,0

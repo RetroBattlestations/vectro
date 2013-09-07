@@ -1,8 +1,8 @@
  100 REM === Setup graphics and initialize some constants
  110 GOSUB 2500
  120 PI = 3.14159265359
- 130 SW = 320:SH = 160:SC = SW: IF SH < SC THEN SC = SH
- 140 SC = SC / 1000:XO = SW / 2
+ 130 SW = 320:SH = 160:SC = SW / 1750:XF = SW / 2
+ 140 IF SH / 1000 < SC THEN SC = SH / 1000
  150 REM === Read the vector graphics from DATA and draw the picture
  160 READ P$
  170 IF P$ = "EOI" THEN END
