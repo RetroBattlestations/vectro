@@ -11,4 +11,5 @@ REM, they are not needed for the program to run. You can also leave
 out all whitespace*. Most BASIC dialects also allow the use of ? as a
 substitute for PRINT to reduce the amount of typing.
 
-* On the TRS-80 Color Computer you need a space before THEN
+* On the TRS-80 Color Computer you need a space before any AND or THEN
+  statement.
