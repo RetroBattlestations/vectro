@@ -1,4 +1,7 @@
  100 REM === Setup graphics and initialize some constants
+ 105 REM ### If the program crashes it will
+ 106 REM ### be stuck in graphics mode.
+ 107 REM ### Type RUN 999 to get back to text.
  110 GOSUB 2500
  120 PI = 3.14159265359
  130 SW = 320:SH = 160:SC = SW / 1750:XF = SW / 2
@@ -9,6 +12,7 @@
  180 IF P$ = "C" OR P$ = "E" THEN GOSUB 1010
  190 IF P$ = "L" THEN GOSUB 1510
  200 GOTO 130
+ 999 POKE 53272,PEEK(53272) AND 247:POKE 53265,PEEK(53265) AND 223
  1000 REM === Draw circle or ellipse
  1010 READ XC,YC,XR:YR = XR: IF P$ = "E" THEN READ YR
  1020 READ AS,AE
@@ -36,7 +40,7 @@
  1240 RETURN
  1500 REM === Draw a line
  1510 READ X1,Y1,X2,Y2
- 1520 X1=INT(X1*SC)+XF:Y1=INT(Y1*SC):X2=INT(X2*SC):Y2=INT(Y2*SC)
+ 1520 X1=INT(X1*SC)+XF:Y1=INT(Y1*SC):X2=INT(X2*SC)+XF:Y2=INT(Y2*SC)
  1530 DX=ABS(X2-X1):SX=-1:IF X1 < X2 THEN SX=1
  1540 DY=ABS(Y2-Y1):SY=-1:IF Y1 < Y2 THEN SY=1
  1550 ER=-DY:IF DX > DY THEN ER=DX
