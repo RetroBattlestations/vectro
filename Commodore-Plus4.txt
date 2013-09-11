@@ -1,7 +1,7 @@
  100 REM === Setup graphics and initialize some constants
  110 GRAPHIC 2,1:COLOR 0,2,7:COLOR 1,1: REM -- Commodore Plus/4
  120 PI = 3.14159265359
- 130 SW = 320:SH = 168:SC = SW / 1750:XF = SW / 2
+ 130 SW = 320:SH = 160:SC = SW / 1750:XF = SW / 2
  140 IF SH / 1000 < SC THEN SC = SH / 1000
  150 REM === Read the vector graphics from DATA and draw the picture
  160 READ P$
