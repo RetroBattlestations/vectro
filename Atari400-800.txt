@@ -1,6 +1,6 @@
  100 REM === Setup graphics and initialize some constants
  110 GRAPHICS 7:SETCOLOR 1,0,14:COLOR 2
- 120 PI = 3.14159265359
+ 120 PI = 3.14159265359:DIM P$(10)
  130 SW = 160:SH = 80:SC = SW / 1750:XF = SW / 2
  140 IF SH / 1000 < SC THEN SC = SH / 1000
  150 REM === Read the vector graphics from DATA and draw the picture

@@ -13,6 +13,7 @@
  1010 READ XC,YC,XR:YR = XR: IF P$ = "E" THEN READ YR
  1020 READ AS,AE
  1030 XC = INT(XC * SC):YC = INT(YC * SC):XR = INT(XR * SC):YR = INT(YR * SC)
+ 1035 IF XR = 0 OR YR = 0 THEN RETURN:REM Circle is too tiny to plot
  1040 A2 = XR * XR:B2 = YR * YR:F2 = 4 * A2
  1050 X = 0:Y = YR:SI = 2 * B2 + A2 * (1 - 2 * YR)
  1060 IF B2 * X > A2 * Y THEN GOTO 1110
