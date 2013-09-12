@@ -5,7 +5,7 @@
  
  115 GOSUB 2000       // Draw Backround Gradient 
  
- 130 SW = 320:SH = 160:SC = SW / 1750:XO = SW / 2
+ 130 SW = 320:SH = 160:SC = SW / 1750:XF = SW / 2
  140 IF SH / 1000 < SC THEN SC = SH / 1000
  150 REM === Read the vector graphics from DATA and draw the picture
  160 READ P$
@@ -21,7 +21,7 @@
  1010 READ XC,YC,XR:YR = XR: IF P$ = "E" OR P$ = "EF" THEN READ YR
  1020 READ AA,AE
  1030 XC = XC * SC:YC = YC * SC:XR = XR * SC:YR = YR * SC
- 1040 XC = XC + XO
+ 1040 XC = XC + XF
  1050 SetRect(RE, XC - XR, XY - YR, XC + XR, YC + YR) 
  1055 AZ = AE - AA
  1060 IF AZ = 360 THEN GOSUB 2100 : return
